@@ -1,0 +1,307 @@
+/* style.css */
+
+/* --- Variabel & Reset Dasar --- */
+:root {
+    --warna-utama: #1a425a; /* Navy */
+    --warna-sekunder: #e8a03c; /* Oranye/Coklat */
+    --text-gelap: #333;
+    --text-terang: #f4f4f4;
+    --bg-light: #f9f9f9;
+    --bg-dark: #2c2c2c;
+    --bg-kertas: #fcfbf8; /* Warna kertas muda */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--text-gelap);
+    background-color: var(--bg-kertas);
+}
+
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: auto;
+}
+
+.padding-section {
+    padding: 40px 0;
+}
+
+h1, h2, h3 {
+    color: var(--warna-utama);
+}
+
+/* style.css - MODIFIKASI UNTUK HEADER GAYA PIL (PILL STYLE) */
+
+/* Variabel warna baru (disesuaikan dengan gambar) */
+:root {
+    --warna-utama: #9A6846; 
+    --warna-sekunder: #E6D4C1; 
+    --text-gelap: #333;
+    --text-terang: #f4f4f4;
+    --bg-header: #966948; /* Cokelat latar belakang header */
+    --bg-pill-active: #E6D2C0; /* Warna pil aktif (krem muda) */
+    --text-pill-active: #966948; /* Warna teks pil aktif */
+    --bg-dark: #2c2c2c;
+}
+
+/* --- Header & Navigasi Global (Perbaikan dan Desain Baru di sini) --- */
+header {
+    background: var(--bg-header); /* Ganti latar belakang header */
+    color: var(--text-terang);
+    padding: 15px 0; /* Tambah padding atas/bawah agar tombol pas */
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4); /* Bayangan sedikit lebih gelap */
+}
+
+header .container {
+    display: flex;
+    justify-content: flex-end; /* Rata kanan agar hanya navigasi yang terlihat */
+    align-items: center;
+}
+
+header .logo {
+    /* Sembunyikan Logo teks 'Fajar Pristianto' dari header ini */
+    display: none; 
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline-block;
+    margin-left: 10px; /* Jarak antar tombol */
+}
+
+nav ul li a {
+    color: var(--text-terang);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1em;
+    padding: 5px 15px; /* Padding untuk membentuk tombol pil */
+    transition: all 0.1s ease;
+    
+    /* Gaya Tombol Pil */
+    border: 2px solid var(--text-terang); /* Garis tepi putih */
+    border-radius: 50px; /* Nilai besar untuk bentuk pil */
+    background: transparent; /* Latar belakang transparan default */
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+/* Hover State */
+nav ul li a:hover {
+    color: var(--bg-header); /* Teks berubah menjadi warna latar belakang */
+    background: var(--text-terang); /* Latar belakang menjadi putih */
+    border-color: var(--text-terang);
+}
+
+/* Active State (Tombol yang sedang dibuka) */
+nav ul li a.active {
+    color: var(--text-pill-active); /* Teks menjadi cokelat/warna latar */
+    background: var(--bg-pill-active); /* Latar belakang menjadi krem muda */
+    border-color: var(--bg-pill-active); /* Garis tepi mengikuti warna latar aktif */
+    /* Tambahkan bayangan lembut untuk efek timbul jika diinginkan */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); 
+}
+
+/* --- Responsif Header (Perbaikan untuk gaya pil) --- */
+@media (max-width: 768px) {
+    header .container {
+        justify-content: center; /* Rata tengah semua tombol di layar kecil */
+    }
+    nav ul {
+        text-align: center;
+    }
+    nav ul li {
+        display: block; /* Tumpuk tombol di bawah satu sama lain */
+        margin: 10px 0; /* Beri jarak antar tombol */
+    }
+    nav ul li a {
+        padding: 10px 20px;
+        font-size: 1em;
+        width: 100%; /* Lebar tombol penuh di ponsel */
+        display: block;
+    }
+}
+
+/* --- Tampilan Proyek (untuk logo-design.html & ig-post.html) --- */
+.proyek-header {
+    padding: 40px 0 20px;
+    text-align: center;
+    background-color: var(--bg-light);
+    border-bottom: 2px solid var(--warna-utama);
+}
+.proyek-header h1 {
+    font-size: 3em;a
+}
+
+.proyek-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 40px 0;
+}
+
+.proyek-item {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: white;
+}
+
+.proyek-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.proyek-item h3 {
+    padding: 15px;
+    text-align: center;
+    background-color: var(--bg-light);
+    margin-top: -4px; /* Menutup border */
+    font-size: 1.2em;
+}
+
+/* --- Footer --- */
+footer {
+    text-align: center;
+    padding: 20px 0;
+    background: #222;
+    color: var(--text-terang);
+    font-size: 0.9em;
+}
+
+
+/* --- Responsif Dasar --- */
+@media (max-width: 768px) {
+    .grid-2 { grid-template-columns: 1fr !important; }
+    header .logo, nav ul { float: none; text-align: center; }
+    nav ul li { margin: 0 10px; }
+    .profil-hero-content { flex-direction: column; text-align: center; }
+    .foto-profil { margin: 0 auto; }
+    #profil h1, .judul-karir { text-align: start; }
+}
+
+/* --- Style Diagram Radar (dari file sebelumnya) --- */
+.grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 50px;
+    align-items: center;
+}
+/* ... (lanjutkan dengan semua CSS untuk diagram radar dari jawaban sebelumnya) ... */
+.keahlian-diagram { text-align: center; }
+.radar-container {
+    width: 320px; height: 320px; margin: 30px auto 10px;
+    position: relative; border: 2px solid var(--warna-utama);
+    border-radius: 50%; background-color: #fff;
+}
+.radar-chart::before, .radar-chart::after {
+    content: ''; position: absolute; width: 100%; height: 100%;
+    border: 1px dashed #ccc; border-radius: 50%; top: 0; left: 0;
+    transform: scale(0.66);
+}
+.radar-chart::after { transform: scale(0.33); }
+.radar-chart { position: relative; width: 100%; height: 100%; transform: rotate(30deg); }
+
+.data-point {
+    position: absolute; width: 45px; height: 45px; line-height: 45px;
+    background: var(--warna-sekunder); color: white; border-radius: 50%;
+    font-weight: bold; font-size: 0.85em; cursor: default;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); text-align: center;
+    transform: translate(-50%, -50%);
+}
+.data-point.ae { top: 15%; left: 80%; } .data-point.pr { top: 50%; left: 95%; } 
+.data-point.ai { top: 85%; left: 80%; } .data-point.canva { top: 85%; left: 20%; }
+.data-point.blender { top: 50%; left: 5%; } .data-point.ps { top: 15%; left: 25%; } 
+.catatan { font-size: 0.8em; color: #888; margin-top: 10px; }
+
+/* --- Gaya Khusus Halaman Index (CV) --- */
+.profil-hero-content {
+    display: flex; align-items: center; gap: 30px;
+    max-width: fit; margin: 0 auto 30px; text-align: left;
+}
+.foto-profil {
+    flex-shrink: 0; width: 150px; height: 150px; border-radius: 20%;
+    overflow: hidden; border: 5px solid var(--warna-sekunder); box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+.foto-profil img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.teks-perkenalan { flex-grow: 1; }
+#profil h1 { font-size: 3.5em; color: var(--warna-utama); margin-bottom: 5px; text-align: left; }
+.judul-karir { font-size: 1.3em; color: var(--warna-utama); margin-bottom: 0; text-align: left; }
+.profil-ringkas {
+    max-width: auto; margin: 0 auto 30px; padding: 20px;
+    border-left: 5px solid var(--warna-sekunder); background-color: var(--bg-light); text-align: left;
+}
+.karakter-list { margin-top: 15px; font-style: italic; font-size: 0.9em; font-weight: bold; color: var(--warna-utama); }
+.visi-saya {
+    max-width: auto; margin: 30px auto 0; padding: 1px;
+    background-color: var(--warna-utama); color: var(--text-terang); text-align: center;
+}
+.visi-saya h3 { color: var(--warna-sekunder); margin-bottom: -5px; }
+/* --- Floating WhatsApp Button --- */
+
+.floating-wa {
+    /* Mengambang di posisi tetap (fixed) di layar */
+    position: absolute; 
+    
+    /* Posisikan di sudut kanan bawah */
+    bottom: 22px; 
+    right: 630px; 
+    width: 100%;
+    
+    
+    /* Gaya visual dasar (lingkaran) */
+    width: 260px;
+    height: 260px;
+    background-color: ghostwhite; /* Warna khas WhatsApp */
+    border-radius: 50%;
+    
+    /* Efek bayangan */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    
+    /* Menggunakan Flexbox untuk memposisikan gambar ikon di tengah */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.1s ease;
+}
+
+/* Efek saat kursor diarahkan (hover) */
+.floating-wa:hover {
+    transform: scale(1.1); /* Sedikit membesar saat di-hover */
+}
+
+.floating-wa img {
+    /* Gaya untuk ikon di dalam lingkaran */
+    width: 335px; /* Sesuaikan ukuran ikon di dalam lingkaran */
+    height: 335px;
+}
+
+/* Responsif untuk layar kecil (mobile) */
+@media (max-width: 600px) {
+    .floating-wa {
+        bottom: 20px;
+        right: 20px;
+        width: 50px;
+        height: 50px;
+    }
+    .floating-wa img {
+        width: 30px;
+        height: 30px;
+    }
+}
